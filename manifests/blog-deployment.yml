@@ -14,7 +14,7 @@ spec:
         version: "1.0"
     spec:
       volumes:
-        - name: blog-data
+        - name: static-data
           persistentVolumeClaim:
             claimName: blog-pvc
       containers:
@@ -28,7 +28,7 @@ spec:
         ports:
         - containerPort: 5000
         volumeMounts:
-          - name: blog-data
+          - name: static-data
             mountPath: /app/flaskblog/static
             subPath: data
         env:
